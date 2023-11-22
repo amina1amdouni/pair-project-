@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Login and Signup</title>
+    <style>
+        /* Your CSS styles remain unchanged */
+    </style>
+</head>
+<body background="https://img.freepik.com/free-vector/man-search-hiring-job-online-from-laptop_1150-52728.jpg?size=626&ext=jpg&ga=GA1.1.1788068356.1700611200&semt=ais">
+
+    <form>
+        <h2>Welcome!</h2>
+        <p>Choose an option:</p>
+
+        <button type="button" onclick="showSignupForm()">Sign Up</button>
+        <button type="button" onclick="showLoginForm()">Login</button>
+
+        <div id="signupForm" style="display: none;">
+            <hr>
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+
+            <button type="button" onclick="signup()">Sign Up</button>
+        </div>
+
+        <div id="loginForm" style="display: none;">
+            <hr>
+            <label for="loginUsername">Username:</label>
+            <input type="text" id="loginUsername" required>
+
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" required>
+
+            <button type="button" onclick="login()">Login</button>
+        </div>
+    </form>
+<script src="login.js"></script>
+   
+
+</body>
+</html>

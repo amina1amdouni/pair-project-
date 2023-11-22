@@ -10,11 +10,11 @@ body{
     place-items: centre;
     margin: 0;
     padding: 0 24px;
-    background-image: url(images/login.jpg);
+    /* background-image: url="https://img.freepik.com/free-vector/man-search-hiring-job-online-from-laptop_1150-52728.jpg?size=626&ext=jpg&ga=GA1.1.1788068356.1700611200&semt=ais"; */
     background-repeat: no-repeat;
     background-size: cover;
     font-family: "Ubuntu";
-    animation: rotate 6s infinite alternate linear;
+     /* animation: rotate 6s infinite alternate linear; */ */
 }
 .login-card{
     position: relative;
