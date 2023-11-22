@@ -29,7 +29,7 @@ array.push({ username:username, password:password })
     console.log(users);
 
     // Redirect to another page after signup
-    window.location.href = 'index2.html'; 
+    window.location.href = 'page2A.html'; 
 }
 var user
 function login() {
@@ -46,7 +46,7 @@ if(array[i].username===loginUsername && array[i].password===loginPassword){
     if (user) {
         alert('Login successful!');
         // Redirect to another page after login
-        window.location.href = 'index2.html';
+        window.location.href = 'page2A.html';
     } else {
         alert('Invalid username or password. Please try again.');
     }
