@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Search</title>
+  <style>
+    #searchBar {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    #container {
+      text-align: center;
+    }
+
+    .card {
+      width: 200px;
+      background: #1135;
+      padding: 10px;
+      margin: 2px;
+      display: inline-block;
+    }
+
+    img {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<div id="searchBar">
+  <label for="search">Search: </label>
+  <input type="text" id="search" oninput="filterCards()">
+</div>
+
+<div id="container"></div>
+
+<button onclick="addCard()">Add Card</button>
+
+<script>
+  let names = ['mohamed hajri', 'amina amdouni'];
+  let ages = [33, 25];
+  let jobs = ['Construction worker', 'Doctor'];
+
+  let contain = document.createElement('div');
+  document.body.appendChild(contain);
+  contain.id = 'container';
+
+  function ele(name, age, job, photo) {
+    let card = document.createElement('div');
+    card.className = 'card';
+
+    let title = document.createElement('h2');
+    let ageElem = document.createElement('p');
+    let jobElem = document.createElement('p');
+    let img = document.createElement('img');
+
+    let head = document.createTextNode(name);
+    let ageTxt = document.createTextNode('Age: ' + age);
+    let jobTxt = document.createTextNode('Job: ' + job);
+    img.src = photo;
+
+    title.appendChild(head);
+    ageElem.appendChild(ageTxt);
+    jobElem.appendChild(jobTxt);
+
+    card.appendChild(title);
+    card.appendChild(jobElem);
+    card.appendChild(ageElem);
+    card.appendChild(img);
+    contain.appendChild(card);
+  }
+
+  function addCard() {
+    let newName = prompt("Enter name:");
+    let newAge = prompt("Enter age:");
+    let newJob = prompt("Enter job:");
+    let newPhoto = prompt("Enter photo URL:");
+
+    names.push(newName);
+    ages.push(parseInt(newAge));
+    jobs.push(newJob);
+
+    ele(newName, parseInt(newAge), newJob, newPhoto);
+    filterCards();  // Apply the current search filter after adding a new card
+  }
+
+  function filterCards() {
+    let searchTerm = document.getElementById('search').value.toLowerCase();
+    let cards = document.getElementsByClassName('card');
+
+    for (let card of cards) {
+      let name = card.querySelector('h2').innerText.toLowerCase();
+      let job = card.querySelector('p:nth-child(2)').innerText.toLowerCase();
+
+      if (name.includes(searchTerm) || job.includes(searchTerm)) {
+        card.style.display = 'inline-block';
+      } else {
+        card.style.display = 'none';
+      }
+    }
+  }
+
+  // Initial cards
+  for (let i = 0; i < names.length; i++) {
+    ele(names[i], ages[i], jobs[i], 'images/boy.jpg');
+  }
+</script>
+
+</body>
+</html>

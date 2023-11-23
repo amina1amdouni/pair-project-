@@ -9,9 +9,13 @@
 <body>
   <nav>
     <div>
-      <a href="#" onclick="displayJobs('All')">All Jobs</a>
-     
-      <a href="#" onclick="showRecruiterForm()">Post a Job</a>
+      <a href="#" onclick="displayJobs('All')">All Jobs</a><tr>
+        ---
+      </tr>
+      <a href="#" onclick="showRecruiterForm()">Post a Job</a><tr>
+        ---
+      </tr>
+      <a href="http://127.0.0.1:3000/mainPage.html">Save CV</a>
     </div>
     <div id="searchContainer">
       <label for="search">Search Jobs:</label>
@@ -25,7 +29,7 @@
   
   <!-- Form for recruiters to post job positions -->
   <div id="recruiterForm">
-    <h2>Post a Job</h2>
+    <h2 id="z" >Post a Job</h2>
     <form onsubmit="submitJob(event)">
       <label for="title">Job Title:</label>
       <input type="text" id="title" name="title" required>

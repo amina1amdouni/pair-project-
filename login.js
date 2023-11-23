@@ -21,7 +21,6 @@ function signup() {
     //     alert('Username already taken. Please choose another username.');
     //     return;
     // }
-
     // Add the new user to the array
 array.push({ username:username, password:password })
     localStorage.setItem("user",JSON.stringify(array))

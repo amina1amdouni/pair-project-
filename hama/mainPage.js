@@ -11,9 +11,7 @@ function ele(names,ages,jobs){
     let age=document.createElement('p')
     let job=document.createElement('p')
     let img=document.createElement('img')
-    
 
-    
     let head=document.createTextNode(names)
     let ageTxt=document.createTextNode(ages)
     let jobA=document.createTextNode(jobs)
@@ -29,9 +27,7 @@ card.style.margin='2px'
 card.style.display='inline-block'
 
 
-
 img.style.width='100%'
-
 
 
 card.appendChild(title)
