@@ -43,9 +43,9 @@ function addCard() {
     jobs.push(newJob);
 
     ele(newName, parseInt(newAge), newJob, newPhoto);
-    filterCards();  // Apply the current search filter after adding a new card
+    filterCards();  
 
-    // Clear input fields after adding a card
+   
     document.getElementById('name').value = '';
     document.getElementById('age').value = '';
     document.getElementById('job').value = '';
@@ -71,7 +71,6 @@ function filterCards() {
   }
 }
 
-// Initial cards
 for (let i = 0; i < names.length; i++) {
   ele(names[i], ages[i], jobs[i], 'images/boy.jpg');
 }

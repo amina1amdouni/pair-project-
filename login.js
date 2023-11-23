@@ -26,6 +26,7 @@ array.push({ username:username, password:password })
     localStorage.setItem("user",JSON.stringify(array))
     users.push({ username:username, password:password });
     console.log(users);
+    localStorage.setItem('current',JSON.parse(username))
 
     // Redirect to another page after signup
     window.location.href = 'page2A.html'; 

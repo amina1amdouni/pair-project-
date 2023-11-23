@@ -4,19 +4,21 @@ let jobData = [
     { title: 'Data Scientist', company: 'DataCorp', location: 'CityC', email: 'data@datacorp.com', phone: '555-123-4567', description: 'Nullam vel ex vel urna ullamcorper eleifend.' },
     // Add more job entries as needed
   ];
-  displayJobs("All")
-  
+//   localStorage.setItem("jobs",JSON.stringify(jobData))
+var current=JSON.parse(localStorage.current)
   // Function to display jobs based on category
   function displayJobs(category) {
     const jobResultsContainer = document.getElementById('jobResults');
     jobResultsContainer.innerHTML = ''; // Clear previous results
-    
-    var jobs= JSON.parse(localStorage.getItem("jobs"))
+
     let filteredJobs;
+
     if (category === 'All') {
-      filteredJobs = jobs;
+      filteredJobs = JSON.parse(localStorage.getItem("jobs"));
     } else {
-      filteredJobs = jobs.filter(job => job.title.toLowerCase().includes(category.toLowerCase()));
+     // filteredJobs = filteredJobs.filter(job => job.title.toLowerCase().includes(category.toLowerCase()));
+     filteredJobs = filteredJobs.filter(job => job.email===current);
+
     }
 
     if (filteredJobs.length === 0) {
@@ -38,7 +40,9 @@ let jobData = [
   function showRecruiterForm() {
     document.getElementById('recruiterForm').style.display = 'block';
   }
-
+  showRecruiterForm()
+  displayJobs("All") 
+var x =JSON.parse(localStorage.getItem("jobs"))
   // Function to submit a new job
   function submitJob(event) {
     event.preventDefault();
@@ -51,8 +55,11 @@ let jobData = [
     const description = document.getElementById('description').value;
 
     // Add the new job to the jobData array
-    jobData.push({ title, company, location, email, phone, description });
+     
 
+    x.push({ title:title, company:company, location:location, email:email, phone:phone, description:description })
+
+    localStorage.setItem("jobs",JSON.stringify(x))
     // Reset form fields
     document.getElementById('title').value = '';
     document.getElementById('company').value = '';
@@ -62,22 +69,20 @@ let jobData = [
     document.getElementById('description').value = '';
 
     // Hide the form
-    document.getElementById('recruiterForm').style.display = 'none';
+    // document.getElementById('recruiterForm').style.display = 'none';
 
     // Refresh the displayed jobs
-    displayJobs('All');
+    //displayJobs('All');
   }
 
   // Function to handle job search
   function searchJobs() {
-    var jobs= JSON.parse(localStorage.getItem("jobs"))
-
     const searchTerm = document.getElementById('search').value.toLowerCase();
 
     const jobResultsContainer = document.getElementById('jobResults');
     jobResultsContainer.innerHTML = ''; // Clear previous results
 
-    const filteredJobs = jobs.filter(job => job.title.toLowerCase().includes(searchTerm));
+    const filteredJobs = jobData.filter(job => job.title.toLowerCase().includes(searchTerm));
 
     if (filteredJobs.length === 0) {
       jobResultsContainer.innerHTML = 'No jobs found for the search term';

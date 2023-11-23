@@ -9,25 +9,19 @@
 <body>
   <nav>
     <div>
-      <a href="#" onclick="displayJobs('All')">All Jobs</a><tr>
-        ---
-      
-      <a href="http://127.0.0.1:3000/mainPage.html">Save CV</a>
-     
-      <!-- <a href="#" onclick="showRecruiterForm()">Post a Job</a> -->
+        <!-- <a href="#" onclick="showRecruiterForm()">Post a Job</a> -->
+        <!-- <a href="#" onclick="displayJobs('All')">All Jobs</a> -->
+       
     </div>
     <div id="searchContainer">
-      <label for="search">Search Jobs:</label>
-      <input type="text" id="search" oninput="searchJobs()">
+     
     </div>
-    
   </nav>
   
   <!-- Container for job results -->
-  <div id="jobResults"></div>
   
   <!-- Form for recruiters to post job positions -->
-  <!-- <div id="recruiterForm">
+  <div id="recruiterForm">
     <h2>Post a Job</h2>
     <form onsubmit="submitJob(event)">
       <label for="title">Job Title:</label>
@@ -50,7 +44,9 @@
   
       <input type="submit" value="Post Job">
     </form>
-  </div> -->
-  <script src="page2A.js"></script>
+  </div>
+  <div id="jobResults"></div>
+
+  <script src="recruter.js"></script>
 </body>
 </html>

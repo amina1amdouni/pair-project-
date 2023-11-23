@@ -3,45 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
-    <title>Login and Signup</title>
-    <style>
-        /* Your CSS styles remain unchanged */
-    </style>
+    <title>Login and Sign Up</title>
+ <link rel="stylesheet" href="log.css">
 </head>
-<body background="hama/images/login.jpg">
+<body background="hama/images/job4.gif">
 
-    <form>
-        <h2>Welcome!</h2>
-        <p>Choose an option:</p>
+<!-- Login Form -->
+<form id="loginForm">
+    <h2>Login</h2>
+    <label for="loginUsername">Username:</label>
+    <input type="text" id="loginUsername" required>
 
-        <button id='b1'type="button" onclick="showSignupForm()">Sign Up</button>
-        <button id="b2" type="button" onclick="showLoginForm()">Login</button>
+    <label for="loginPassword">Password:</label>
+    <input type="password" id="loginPassword" required>
 
-        <div id="signupForm" style="display: none;">
-            <hr>
-            <label for="username">Username:</label>
-            <input type="text" id="username" required>
+    <button type="button" onclick="login()">Login</button>
+</form>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" required>
+<!-- Sign Up Form -->
+<form id="signupForm" style="display:none;">
+    <h2>Sign Up</h2>
+    <label for="signupUsername">Username:</label>
+    <input type="text" id="signupUsername" required>
 
-            <button type="button" onclick="signup()">Sign Up</button>
-        </div>
+    <label for="signupPassword">Password:</label>
+    <input type="password" id="signupPassword" required>
 
-        <div id="loginForm" style="display: none;">
-            <hr>
-            <label for="loginUsername">Username:</label>
-            <input type="text" id="loginUsername" required>
+    <div class="user-type">
+        <label  ><input  type="radio" name="userType" value="recruiter" checked> Recruiter</label>
+        <label  ><input  type="radio" name="userType" value="candidate"> Candidate</label>
+    </div>
 
-            <label for="loginPassword">Password:</label>
-            <input type="password" id="loginPassword" required>
-
-            <button type="button" onclick="login()">Login</button>
-        </div>
-    </form>
-<script src="login.js"></script>
-   
+    <button type="button" onclick="signup()">Sign Up</button>
+</form>
+<script src="loginA.js"></script>
+<p id="1" >Don't have an account? <a id="2" href="#" onclick="toggleForms()">Sign Up</a></p>
 
 </body>
 </html>
+
