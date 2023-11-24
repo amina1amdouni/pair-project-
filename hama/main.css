@@ -1,0 +1,121 @@
+@import url('httpsfonts.googleapis.comcss2family=Ubuntuital,wght@0,300;0,400;1,500;1,700&display=swap');
+body{
+    box-sizing :border-box;
+}
+html, body, .wrapper{
+    height 100%;
+}
+body{
+    font-display: inherit;
+    place-items :left;
+    margin :0;
+    padding :0 24px;
+    background-image :url(https://resources.workable.com/wp-content/uploads/2019/09/careers-page.png);
+    background-repeat :no-repeat;
+    background-size :cover;
+    font-family :Ubuntu;
+    animation rotate :6s infinite alternate linear;
+}
+.login-card{
+    position :relative;
+    margin: 0 20px;
+    border-radius :1.25rem;
+    background: #fff;
+    text-align :center;
+}
+.login-card h2{
+    font-size :16px;
+    font-weight: 600;
+    margin :0 0 12px;
+}
+.login-card h2{
+    color :black;
+    margin :0 0 30px;
+    font-size :1rem;
+}
+.login-form{
+    position :relative;
+    margin: 0 20px;
+    border-radius :1.25rem;
+    background: #fff;
+    text-align :center;
+}
+.login-form  input, .login-formbutton{
+    width :100%;
+    height :50px;
+}
+.login-form input {
+    border :2px solid #ebebeb;
+    font-family :inherit;
+    font-size :15px;
+    padding :0 16px;
+    border-radius: 1.25rem;
+    transition all: 0.375s;
+}
+
+.login-form inputhover{
+    border :2px solid rgb(18, 213, 216);
+}
+.login-formbutton{
+    cursor :pointer;
+    width :100%;
+    padding: 0 16px;
+    border-radius: 1.25ram;
+    background: #f9f9f9;
+    border: 0;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 2px;
+    transition all: 0.375s;
+}
+.login-formbuttonhover{
+    background :#10449A;
+}
+
+.login-form a{
+    color: #216ca7;
+    font-size: 0.9rem;
+    text-align left:;
+    text-decoration :none;
+    margin-bottom :6px;
+    transition all :0.375s;
+}
+.login-form ahover{
+    color :#10449A;
+
+}
+@keyframes rotate{
+    100%{
+     background-position :15% 50%;}
+}
+@media(width = 500px){
+    body{
+        padding :0;
+    }
+    .login-card{
+        margin :0;
+        width :400px ;
+    }
+}
+
+#sig{
+    color: #28ca40;
+}
+
+
+
+
+
+
+
+
+
+#l1{
+    color: rgba(255, 255, 255, 0.584)
+}
+
+#l2{
+    color:#ffffff4b;
+}

@@ -5,7 +5,7 @@ let jobData = [
     // Add more job entries as needed
   ];
 //   localStorage.setItem("jobs",JSON.stringify(jobData))
-
+var current=JSON.parse(localStorage.current)
   // Function to display jobs based on category
   function displayJobs(category) {
     const jobResultsContainer = document.getElementById('jobResults');
@@ -16,7 +16,9 @@ let jobData = [
     if (category === 'All') {
       filteredJobs = JSON.parse(localStorage.getItem("jobs"));
     } else {
-      filteredJobs = jobData.filter(job => job.title.toLowerCase().includes(category.toLowerCase()));
+     // filteredJobs = filteredJobs.filter(job => job.title.toLowerCase().includes(category.toLowerCase()));
+     filteredJobs = filteredJobs.filter(job => job.email===current);
+
     }
 
     if (filteredJobs.length === 0) {
@@ -70,7 +72,7 @@ var x =JSON.parse(localStorage.getItem("jobs"))
     // document.getElementById('recruiterForm').style.display = 'none';
 
     // Refresh the displayed jobs
-    displayJobs('All');
+    //displayJobs('All');
   }
 
   // Function to handle job search
@@ -96,3 +98,42 @@ var x =JSON.parse(localStorage.getItem("jobs"))
       jobResultsContainer.appendChild(ul);
     }
   }
+
+
+
+
+  // ...
+
+// Function to submit a new job
+function submitJob(event) {
+  event.preventDefault();
+
+  const title = document.getElementById('title').value;
+  const company = document.getElementById('company').value;
+  const location = document.getElementById('location').value;
+  const email = document.getElementById('email').value;
+  const phone = document.getElementById('phone').value;
+  const description = document.getElementById('description').value;
+
+  // Retrieve the existing jobs from localStorage
+  let jobs = JSON.parse(localStorage.getItem("jobs")) || [];
+
+  // Add the new job to the jobs array
+  jobs.push({ title, company, location, email, phone, description });
+
+  // Save the updated jobs array back to localStorage
+  localStorage.setItem("jobs", JSON.stringify(jobs));
+
+  // Reset form fields
+  document.getElementById('title').value = '';
+  document.getElementById('company').value = '';
+  document.getElementById('location').value = '';
+  document.getElementById('email').value = '';
+  document.getElementById('phone').value = '';
+  document.getElementById('description').value = '';
+
+  // Refresh the displayed jobs
+  displayJobs('All');
+}
+
+// ...

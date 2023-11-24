@@ -1,92 +1,117 @@
 body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 20px;
+  background-color: #a2fbf1;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 20px;
-    background-color: #f4f4f4;
-  }
+    background-color: #000000;
+    background-image: url('hama/images/BXe0.gif'); /* Replace 'path/to/your/image.jpg' with the actual path to your image file */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+h2{color: #cca809;}
+#t1{
+  text-align: center;
+  column-width: red;
+  color-scheme: red;
+  color-interpolation-filters: red;
+  color: #c48600;
+}
+nav {
+  background-color: rgb(177, 122, 18);
+  overflow: hidden;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
 
-  nav {
-    background-color: #333;
-    overflow: hidden;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-  }
+nav a {
+  color: #751414;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+} 
 
-  nav a {
-    color: #f2f2f2;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s;
-  } 
+nav a:hover {
+  background-color:rgb(212, 227, 47);
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
 
-  nav a:hover {
-    background-color: #555;
-  }
+#searchContainer {
+  text-align: center;
+}
 
-  #searchContainer {
-    text-align: center;
-  }
+#search {
+  padding: 10px;
+  width: 60%;
+  border: 1px solid #371ad9;
+  border-radius: 5px;
+  margin-left: 10px;
+}
 
-  #search {
-    padding: 10px;
-    width: 60%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-left: 10px;
-  }
+#jobResults {
+  margin-top: 20px;
+}
 
-  #jobResults {
-    margin-top: 20px;
-  }
+#recruiterForm {
+  
+  display: none;
+  background-color: #rgb(167, 109, 0);
+  padding: 20px;
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-  #recruiterForm {
-    display: none;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+form {
+  max-width: 400px;
+  margin: auto;
+}
 
-  form {
-    max-width: 400px;
-    margin: auto;
-  }
+label {
+  width: 30%;
+  display: block;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
 
-  label {
-    display: block;
-    margin-bottom: 8px;
-  }
+input[type="text"], input[type="email"], input[type="tel"], textarea, input[type="submit"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
 
-  input[type="text"], input[type="email"], input[type="tel"], textarea, input[type="submit"] {
-    padding: 10px;
-    margin-bottom: 10px;
-    width: 100%;
-    box-sizing: border-box;
-  }
+input[type="submit"] {
+  background-color:;
+  color: #d50e0e;
+  cursor: pointer;
+}
 
-  input[type="submit"] {
-    background-color: #333;
-    color: #fff;
-    cursor: pointer;
-  }
+input[type="submit"]:hover {
+  background-color: #9b9000;
+}
 
-  input[type="submit"]:hover {
-    background-color: #555;
-  }
+ul {
+  list-style: none;
+  padding: 0;
+}
 
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  li {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    margin-bottom: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+li {
+  text-align: center;
+  width: 50%;
+  height: 10%;
+  background-color: #f3f4f5;
+  border: 1px solid rgb(239, 247, 186)fff;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 10px rgb(179, 35, 35);
+}
+#z{
+  color: #cca809;
+}
