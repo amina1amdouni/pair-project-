@@ -10,14 +10,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
-h2{color: #cca809;}
-#t1{
-  text-align: center;
-  column-width: red;
-  color-scheme: red;
-  color-interpolation-filters: red;
-  color: #c48600;
-}
+
 nav {
   background-color: rgb(177, 122, 18);
   overflow: hidden;

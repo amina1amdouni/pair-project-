@@ -93,3 +93,40 @@ let jobData = [
       jobResultsContainer.appendChild(ul);
     }
   }
+  function displayJobs(category) {
+    const jobResultsContainer = document.getElementById('jobResults');
+    jobResultsContainer.innerHTML = ''; // Clear previous results
+
+    var jobs = JSON.parse(localStorage.getItem("jobs")) || [];
+    let filteredJobs;
+
+    if (category === 'All') {
+      filteredJobs = jobs;
+    } else {
+      filteredJobs = jobs.filter(job => job.title.toLowerCase().includes(category.toLowerCase()));
+    }
+
+    if (filteredJobs.length === 0) {
+      jobResultsContainer.innerHTML = 'No jobs found for this category';
+    } else {
+      const ul = document.createElement('ul');
+
+      filteredJobs.forEach((job, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `<strong>${job.title}</strong><br>Email: ${job.email}<br>Location: ${job.location}<br>Description: ${job.description}
+                        <button onclick="deleteJob(${index})">Delete</button>`;
+        ul.appendChild(li);
+      });
+
+      jobResultsContainer.appendChild(ul);
+    }
+  }
+  function deleteJob(index) {
+    let jobs = JSON.parse(localStorage.getItem("jobs")) || [];
+
+    jobs.splice(index, 1);
+
+    localStorage.setItem("jobs", JSON.stringify(jobs));
+
+    displayJobs('All');
+  }
